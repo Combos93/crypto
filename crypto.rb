@@ -16,6 +16,13 @@ puts "Каким способом зашифровать:"
 puts "1. MD5"
 puts "2. SHA1"
 crypt = STDIN.gets.chomp
+  while (crypt != "1" and crypt != "2")
+    puts "Введите либо 1, либо 2"
+    puts "1. MD5"
+    puts "2. SHA1"
+    crypt = STDIN.gets.chomp
+  end
+
 case crypt
 when "1"
   puts Digest::MD5.hexdigest("#{talk}")
@@ -23,9 +30,3 @@ when "2"
   puts Digest::SHA1.hexdigest("#{talk}")
 end
 
-# while crypt != 1 and crypt != 2 do
-#   puts "Введите либо 1, либо 2"
-#   puts "1. MD5"
-#   puts "2. SHA1"
-#   crypt = STDIN.gets.chomp
-# end
